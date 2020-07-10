@@ -46,96 +46,131 @@ get_header();
           <!--Filter-->
           <div class="projetc-inner">
             <div class="row">
-              <div class=" col-lg-6 col-md-6 filter branding">
-                <div class="project_product-two-columns">
-                  <div class="project-holder">
-                    <a href="single-portflio-2.html">
-                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/3.jpg'); ?>" class="img-responsive" alt="" title="">
-                      <div class="project_product-two-columns-holder">
-                        <div class="project_product-two-columns-text">
-                          <h4>Branding Design 1</h4>
-                          <span>Branding</span>
+              <?php
+              $brand_loop = new WP_Query(array(
+                'post_type' => 'client_work',
+                'order' => 'ASC',
+                'cat' => 5,
+                'posts_per_page' => '4'
+              ));
+              while ($brand_loop->have_posts()) : $brand_loop->the_post(); ?>
+                <div class=" col-lg-6 col-md-6 filter branding">
+                  <div class="project_product-two-columns">
+                    <div class="project-holder">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php
+                        if (has_post_thumbnail()) {
+                          the_post_thumbnail('full', ['class' => 'img-responsive']);
+                        }
+                        ?>
+                        <div class="project_product-two-columns-holder">
+                          <div class="project_product-two-columns-text">
+                            <h4><?php the_title(); ?></h4>
+                            <span><?php echo get_cat_name(5); ?></span>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class=" col-lg-6 col-md-6 filter branding">
-                <div class="project_product-two-columns">
-                  <div class="project-holder">
-                    <a href="single-portflio-2.html">
-                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/4.jpg'); ?>" class="img-responsive" alt="" title="">
-                      <div class="project_product-two-columns-holder">
-                        <div class="project_product-two-columns-text">
-                          <h4>Branding Design 2</h4>
-                          <span>Branding</span>
+
+              <?php endwhile;
+              wp_reset_query(); ?>
+
+              <?php
+              $web_loop = new WP_Query(array(
+                'post_type' => 'client_work',
+                'order' => 'ASC',
+                'cat' => 4,
+                'posts_per_page' => '4'
+              ));
+              while ($web_loop->have_posts()) : $web_loop->the_post(); ?>
+
+                <div class=" col-lg-6 col-md-6 filter Web-design">
+                  <div class="project_product-two-columns">
+                    <div class="project-holder">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php
+                        if (has_post_thumbnail()) {
+                          the_post_thumbnail('full', ['class' => 'img-responsive']);
+                        }
+                        ?>
+                        <div class="project_product-two-columns-holder">
+                          <div class="project_product-two-columns-text">
+                            <h4><?php the_title(); ?></h4>
+                            <span><?php echo get_cat_name(4); ?></span>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class=" col-lg-6 col-md-6 filter Web-design">
-                <div class="project_product-two-columns">
-                  <div class="project-holder">
-                    <a href="single-portflio-2.html">
-                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/6.jpg'); ?>" class="img-responsive" alt="" title="">
-                      <div class="project_product-two-columns-holder">
-                        <div class="project_product-two-columns-text">
-                          <h4>Web Design</h4>
-                          <span>Web</span>
+
+              <?php endwhile;
+              wp_reset_query(); ?>
+
+              <?php
+              $graphic_loop = new WP_Query(array(
+                'post_type' => 'client_work',
+                'order' => 'ASC',
+                'cat' => 6,
+                'posts_per_page' => '4'
+              ));
+              while ($graphic_loop->have_posts()) : $graphic_loop->the_post(); ?>
+                <div class=" col-lg-6 col-md-6 filter Graphic-design">
+                  <div class="project_product-two-columns">
+                    <div class="project-holder">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php
+                        if (has_post_thumbnail()) {
+                          the_post_thumbnail('full', ['class' => 'img-responsive']);
+                        }
+                        ?>
+                        <div class="project_product-two-columns-holder">
+                          <div class="project_product-two-columns-text">
+                            <h4><?php the_title(); ?></h4>
+                            <span><?php echo get_cat_name(6); ?></span>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class=" col-lg-6 col-md-6 filter Web-design">
-                <div class="project_product-two-columns">
-                  <div class="project-holder">
-                    <a href="single-portflio-2.html">
-                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/1.jpg'); ?>" class="img-responsive" alt="" title="">
-                      <div class="project_product-two-columns-holder">
-                        <div class="project_product-two-columns-text">
-                          <h4>Web Design</h4>
-                          <span>Web</span>
+
+              <?php endwhile;
+              wp_reset_query(); ?>
+
+              <?php
+              $other_loop = new WP_Query(array(
+                'post_type' => 'client_work',
+                'order' => 'ASC',
+                'cat' => 7,
+                'posts_per_page' => '4'
+              ));
+              while ($other_loop->have_posts()) : $other_loop->the_post(); ?>
+
+                <div class=" col-lg-6 col-md-6 filter other">
+                  <div class="project_product-two-columns">
+                    <div class="project-holder">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php
+                        if (has_post_thumbnail()) {
+                          the_post_thumbnail('full', ['class' => 'img-responsive']);
+                        }
+                        ?>
+                        <div class="project_product-two-columns-holder">
+                          <div class="project_product-two-columns-text">
+                            <h4><?php the_title(); ?></h4>
+                            <span><?php echo get_cat_name(7); ?></span>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class=" col-lg-6 col-md-6 filter Graphic-design">
-                <div class="project_product-two-columns">
-                  <div class="project-holder">
-                    <a href="single-portflio-2.html">
-                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/1.jpg'); ?>" class="img-responsive" alt="" title="">
-                      <div class="project_product-two-columns-holder">
-                        <div class="project_product-two-columns-text">
-                          <h4>Graphic-design</h4>
-                          <span>Graphic-design</span>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class=" col-lg-6 col-md-6 filter other">
-                <div class="project_product-two-columns">
-                  <div class="project-holder">
-                    <a href="single-portflio-2.html">
-                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/1.jpg'); ?>" class="img-responsive" alt="" title="">
-                      <div class="project_product-two-columns-holder">
-                        <div class="project_product-two-columns-text">
-                          <h4>other</h4>
-                          <span>Other</span>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+
+              <?php endwhile;
+              wp_reset_query(); ?>
             </div>
           </div>
         </div>
