@@ -46,105 +46,93 @@ get_header();
           <!--Filter-->
           <div class="projetc-inner">
             <div class="row">
-              <div class=" col-lg-6 col-md-6">
-                <div class="filter all branding Graphic-design">
-                  <div class="project_product-two-columns">
-                    <div class="project-holder">
-                      <a href="single-portflio-2.html">
-                        <img src="<?php echo get_theme_file_uri('assets/images/portflio/1.jpg'); ?>" class="img-responsive" alt="" title="">
-                        <div class="project_product-two-columns-holder">
-                          <div class="project_product-two-columns-text">
-                            <h4>Package Design</h4>
-                            <span>Branding</span>
-                          </div>
+              <div class=" col-lg-6 col-md-6 filter branding">
+                <div class="project_product-two-columns">
+                  <div class="project-holder">
+                    <a href="single-portflio-2.html">
+                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/3.jpg'); ?>" class="img-responsive" alt="" title="">
+                      <div class="project_product-two-columns-holder">
+                        <div class="project_product-two-columns-text">
+                          <h4>Branding Design 1</h4>
+                          <span>Branding</span>
                         </div>
-                      </a>
-                    </div>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class=" col-lg-6 col-md-6">
-                <div class="filter all branding Graphic-design">
-                  <div class="project_product-two-columns">
-                    <div class="project-holder">
-                      <a href="single-portflio-2.html">
-                        <img src="<?php echo get_theme_file_uri('assets/images/portflio/2.jpg'); ?>" class="img-responsive" alt="" title="">
-                        <div class="project_product-two-columns-holder">
-                          <div class="project_product-two-columns-text">
-                            <h4>Package Design</h4>
-                            <span>Branding</span>
-                          </div>
+              <div class=" col-lg-6 col-md-6 filter branding">
+                <div class="project_product-two-columns">
+                  <div class="project-holder">
+                    <a href="single-portflio-2.html">
+                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/4.jpg'); ?>" class="img-responsive" alt="" title="">
+                      <div class="project_product-two-columns-holder">
+                        <div class="project_product-two-columns-text">
+                          <h4>Branding Design 2</h4>
+                          <span>Branding</span>
                         </div>
-                      </a>
-                    </div>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class=" col-lg-6 col-md-6">
-                <div class="filter all branding Web-design other Graphic-design">
-                  <div class="project_product-two-columns">
-                    <div class="project-holder">
-                      <a href="single-portflio-2.html">
-                        <img src="<?php echo get_theme_file_uri('assets/images/portflio/3.jpg'); ?>" class="img-responsive" alt="" title="">
-                        <div class="project_product-two-columns-holder">
-                          <div class="project_product-two-columns-text">
-                            <h4>Package Design</h4>
-                            <span>Branding</span>
-                          </div>
+              <div class=" col-lg-6 col-md-6 filter Web-design">
+                <div class="project_product-two-columns">
+                  <div class="project-holder">
+                    <a href="single-portflio-2.html">
+                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/6.jpg'); ?>" class="img-responsive" alt="" title="">
+                      <div class="project_product-two-columns-holder">
+                        <div class="project_product-two-columns-text">
+                          <h4>Web Design</h4>
+                          <span>Web</span>
                         </div>
-                      </a>
-                    </div>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class=" col-lg-6 col-md-6">
-                <div class="filter all Web-design  other Graphic-design ">
-                  <div class="project_product-two-columns">
-                    <div class="project-holder">
-                      <a href="single-portflio-2.html">
-                        <img src="<?php echo get_theme_file_uri('assets/images/portflio/4.jpg'); ?>" class="img-responsive" alt="" title="">
-                        <div class="project_product-two-columns-holder">
-                          <div class="project_product-two-columns-text">
-                            <h4>Package Design</h4>
-                            <span>Branding</span>
-                          </div>
+              <div class=" col-lg-6 col-md-6 filter Web-design">
+                <div class="project_product-two-columns">
+                  <div class="project-holder">
+                    <a href="single-portflio-2.html">
+                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/1.jpg'); ?>" class="img-responsive" alt="" title="">
+                      <div class="project_product-two-columns-holder">
+                        <div class="project_product-two-columns-text">
+                          <h4>Web Design</h4>
+                          <span>Web</span>
                         </div>
-                      </a>
-                    </div>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class=" col-lg-6 col-md-6">
-                <div class="filter all Web-design">
-                  <div class="project_product-two-columns">
-                    <div class="project-holder">
-                      <a href="single-portflio-2.html">
-                        <img src="<?php echo get_theme_file_uri('assets/images/portflio/6.jpg'); ?>" class="img-responsive" alt="" title="">
-                        <div class="project_product-two-columns-holder">
-                          <div class="project_product-two-columns-text">
-                            <h4>Package Design</h4>
-                            <span>Branding</span>
-                          </div>
+              <div class=" col-lg-6 col-md-6 filter Graphic-design">
+                <div class="project_product-two-columns">
+                  <div class="project-holder">
+                    <a href="single-portflio-2.html">
+                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/1.jpg'); ?>" class="img-responsive" alt="" title="">
+                      <div class="project_product-two-columns-holder">
+                        <div class="project_product-two-columns-text">
+                          <h4>Graphic-design</h4>
+                          <span>Graphic-design</span>
                         </div>
-                      </a>
-                    </div>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class=" col-lg-6 col-md-6">
-                <div class="filter all Web-design">
-                  <div class="project_product-two-columns">
-                    <div class="project-holder">
-                      <a href="single-portflio-2.html">
-                        <img src="<?php echo get_theme_file_uri('assets/images/portflio/1.jpg'); ?>" class="img-responsive" alt="" title="">
-                        <div class="project_product-two-columns-holder">
-                          <div class="project_product-two-columns-text">
-                            <h4>Package Design</h4>
-                            <span>Branding</span>
-                          </div>
+              <div class=" col-lg-6 col-md-6 filter other">
+                <div class="project_product-two-columns">
+                  <div class="project-holder">
+                    <a href="single-portflio-2.html">
+                      <img src="<?php echo get_theme_file_uri('assets/images/portflio/1.jpg'); ?>" class="img-responsive" alt="" title="">
+                      <div class="project_product-two-columns-holder">
+                        <div class="project_product-two-columns-text">
+                          <h4>other</h4>
+                          <span>Other</span>
                         </div>
-                      </a>
-                    </div>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
