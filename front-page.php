@@ -274,94 +274,159 @@ $team_two_img = get_field('team_two_img', 10);
           </div>
           <div class="projetc-inner">
             <div class="row">
-              <div class=" col-lg-4 col-md-4 filter branding">
-                <div class="project_product">
-                  <div class="project-holder">
-                    <img src="<?php echo get_theme_file_uri('assets/images/portflio/1.jpg'); ?>" class="img-responsive" alt="" title="">
-                    <div class="text-holder">
-                      <div class="text-holder-outer">
-                        <div class="text-holder-inner">
-                          <h4>Branding</h4>
-                          <div class="icon-holder">
-                            <a href="assets/images/portflio/1.jpg" class="modal-venobox project-link">
-                              <i class=" icon_zoom-in_alt"></i>
-                            </a>
-                            <a href="single-portflio.html" class=" project-link">
-                              <i class="icon_link_alt"></i>
-                            </a>
+              <?php
+              $brand_loop = new WP_Query(array(
+                'post_type' => 'client_work',
+                'order' => 'ASC',
+                'cat' => 5,
+                'posts_per_page' => '4'
+              ));
+              while ($brand_loop->have_posts()) : $brand_loop->the_post(); ?>
+                <div class=" col-lg-4 col-md-4 filter branding">
+                  <div class="project_product">
+                    <div class="project-holder">
+                      <?php
+                      if (has_post_thumbnail()) {
+                        the_post_thumbnail('full', ['class' => 'img-responsive']);
+                      }
+                      $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                      ?>
+                      <div class="text-holder">
+                        <div class="text-holder-outer">
+                          <div class="text-holder-inner">
+                            <h4>Branding</h4>
+                            <div class="icon-holder">
+                              <a href="<?php echo $featured_img_url; ?>" class="modal-venobox project-link">
+                                <i class=" icon_zoom-in_alt"></i>
+                              </a>
+                              <a href="<?php the_permalink(); ?>" class=" project-link">
+                                <i class="icon_link_alt"></i>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class=" col-lg-4 col-md-4 filter Web-design">
-                <div class="project_product">
-                  <div class="project-holder">
-                    <img src="<?php echo get_theme_file_uri('assets/images/portflio/2.jpg'); ?>" class="img-responsive" alt="" title="">
-                    <div class="text-holder">
-                      <div class="text-holder-outer">
-                        <div class="text-holder-inner">
-                          <h4>Web Design</h4>
-                          <div class="icon-holder">
-                            <a href="assets/images/portflio/2.jpg" class="modal-venobox project-link">
-                              <i class=" icon_zoom-in_alt"></i>
-                            </a>
-                            <a href="single-portflio.html" class=" project-link">
-                              <i class="icon_link_alt"></i>
-                            </a>
+              <?php endwhile;
+              wp_reset_query(); ?>
+
+              <?php
+              $web_loop = new WP_Query(array(
+                'post_type' => 'client_work',
+                'order' => 'ASC',
+                'cat' => 4,
+                'posts_per_page' => '4'
+              ));
+              while ($web_loop->have_posts()) : $web_loop->the_post(); ?>
+                <div class=" col-lg-4 col-md-4 filter Web-design">
+                  <div class="project_product">
+                    <div class="project-holder">
+                      <?php
+                      if (has_post_thumbnail()) {
+                        the_post_thumbnail('full', ['class' => 'img-responsive']);
+                      }
+                      $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                      ?>
+                      <div class="text-holder">
+                        <div class="text-holder-outer">
+                          <div class="text-holder-inner">
+                            <h4>Web Design</h4>
+                            <div class="icon-holder">
+                              <a href="<?php echo $featured_img_url; ?>" class="modal-venobox project-link">
+                                <i class=" icon_zoom-in_alt"></i>
+                              </a>
+                              <a href="<?php the_permalink(); ?>" class=" project-link">
+                                <i class="icon_link_alt"></i>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class=" col-lg-4 col-md-4 filter Graphic-design">
-                <div class="project_product">
-                  <div class="project-holder">
-                    <img src="<?php echo get_theme_file_uri('assets/images/portflio/3.jpg'); ?>" class="img-responsive" alt="" title="">
-                    <div class="text-holder">
-                      <div class="text-holder-outer">
-                        <div class="text-holder-inner">
-                          <h4>Graphic Design</h4>
-                          <div class="icon-holder">
-                            <a href="assets/images/portflio/3.jpg" class="modal-venobox project-link">
-                              <i class=" icon_zoom-in_alt"></i>
-                            </a>
-                            <a href="single-portflio.html" class=" project-link">
-                              <i class="icon_link_alt"></i>
-                            </a>
+              <?php endwhile;
+              wp_reset_query(); ?>
+
+              <?php
+              $graphic_loop = new WP_Query(array(
+                'post_type' => 'client_work',
+                'order' => 'ASC',
+                'cat' => 6,
+                'posts_per_page' => '1'
+              ));
+              while ($graphic_loop->have_posts()) : $graphic_loop->the_post(); ?>
+                <div class=" col-lg-4 col-md-4 filter Graphic-design">
+                  <div class="project_product">
+                    <div class="project-holder">
+                      <?php
+                      if (has_post_thumbnail()) {
+                        the_post_thumbnail('full', ['class' => 'img-responsive']);
+                      }
+                      $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                      ?>
+                      <div class="text-holder">
+                        <div class="text-holder-outer">
+                          <div class="text-holder-inner">
+                            <h4>Graphic Design</h4>
+                            <div class="icon-holder">
+                              <a href="<?php echo $featured_img_url; ?>" class="modal-venobox project-link">
+                                <i class=" icon_zoom-in_alt"></i>
+                              </a>
+                              <a href="<?php the_permalink(); ?>" class=" project-link">
+                                <i class="icon_link_alt"></i>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class=" col-lg-4  col-md-4 filter other">
-                <div class="project_product">
-                  <div class="project-holder">
-                    <img src="<?php echo get_theme_file_uri('assets/images/portflio/4.jpg'); ?>" class="img-responsive" alt="" title="">
-                    <div class="text-holder">
-                      <div class="text-holder-outer">
-                        <div class="text-holder-inner">
-                          <h4>Other</h4>
-                          <div class="icon-holder">
-                            <a href="assets/images/portflio/4.jpg" class="modal-venobox project-link">
-                              <i class=" icon_zoom-in_alt"></i>
-                            </a>
-                            <a href="single-portflio.html" class=" project-link">
-                              <i class="icon_link_alt"></i>
-                            </a>
+
+              <?php endwhile;
+              wp_reset_query(); ?>
+
+              <?php
+              $other_loop = new WP_Query(array(
+                'post_type' => 'client_work',
+                'order' => 'ASC',
+                'cat' => 7,
+                'posts_per_page' => '1'
+              ));
+              while ($other_loop->have_posts()) : $other_loop->the_post(); ?>
+                <div class=" col-lg-4  col-md-4 filter other">
+                  <div class="project_product">
+                    <div class="project-holder">
+                      <?php
+                      if (has_post_thumbnail()) {
+                        the_post_thumbnail('full', ['class' => 'img-responsive']);
+                      }
+                      $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                      ?>
+                      <div class="text-holder">
+                        <div class="text-holder-outer">
+                          <div class="text-holder-inner">
+                            <h4>Other</h4>
+                            <div class="icon-holder">
+                              <a href="<?php echo $featured_img_url; ?>" class="modal-venobox project-link">
+                                <i class=" icon_zoom-in_alt"></i>
+                              </a>
+                              <a href="<?php the_permalink(); ?>" class=" project-link">
+                                <i class="icon_link_alt"></i>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+
+              <?php endwhile;
+              wp_reset_query(); ?>
             </div>
           </div>
         </div>
