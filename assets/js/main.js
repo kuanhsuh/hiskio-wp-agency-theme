@@ -233,22 +233,6 @@ VenoBox
     titleattr: "data-title", // default: 'title'// default: false
   });
 
-  /*----------------------------------------------------*/
-  /*  VIDEO POP PUP
-    /*----------------------------------------------------*/
-
-  $(".video-modal").magnificPopup({
-    type: "iframe",
-
-    iframe: {
-      patterns: {
-        youtube: {
-          index: "youtube.com",
-          src: videoYoutubeLink,
-        },
-      },
-    },
-  });
   /* ---------------------------------------------
      Back top page scroll up
      --------------------------------------------- */

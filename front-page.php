@@ -658,8 +658,5 @@ $team_two_img = get_field('team_two_img', 10);
 </section>
 <!--End sponsors clients-->
 
-<script>
-  var videoYoutubeLink = "<?php the_field('video_youtube_link', 10); ?>";
-</script>
 <?php
 get_footer();

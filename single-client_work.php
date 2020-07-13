@@ -20,7 +20,7 @@ get_header();
           <h2 class="title-h2"><?php the_title(); ?></h2>
           <small>
             <?php
-            foreach (get_categories('exclude=1') as $category) {
+            foreach (get_the_category() as $category) {
               echo $category->name;
             } ?>
           </small>
@@ -53,7 +53,7 @@ get_header();
                   <li class="clearfix"><strong>Date</strong> <span><?php the_date(); ?></span></li>
                   <li class="clearfix"><strong>Category</strong> <span>
                       <?php
-                      foreach (get_categories('exclude=1') as $category) {
+                      foreach (get_the_category() as $category) {
                         echo $category->name;
                       } ?>
                     </span></li>

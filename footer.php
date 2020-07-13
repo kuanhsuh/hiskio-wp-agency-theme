@@ -122,6 +122,31 @@
 
 <?php wp_footer(); ?>
 
+<?php if (is_front_page()) { ?>
+
+  <script>
+    var videoYoutubeLink = "<?php the_field('video_youtube_link', 10); ?>";
+
+    /*----------------------------------------------------*/
+    /*  VIDEO POP PUP
+      /*----------------------------------------------------*/
+
+    $(".video-modal").magnificPopup({
+      type: "iframe",
+
+      iframe: {
+        patterns: {
+          youtube: {
+            index: "youtube.com",
+            src: videoYoutubeLink,
+          },
+        },
+      },
+    });
+  </script>
+
+<?php } ?>
+
 </body>
 
 </html>
