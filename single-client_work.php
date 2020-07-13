@@ -7,6 +7,23 @@
  *
  * @package hiskio-agency
  */
+// Web Design ID 4
+// Brand ID 5
+// Graphic Design ID 6
+// Other ID 7
+$cat_id = get_the_category()[0]->term_id;
+if ($cat_id === 5) {
+  $portfolio_bg_file = get_theme_file_uri('assets/images/portfolio/bg-branding.jpg');
+}
+if ($cat_id === 4) {
+  $portfolio_bg_file = get_theme_file_uri('assets/images/portfolio/bg-web-design.jpg');
+}
+if ($cat_id === 6) {
+  $portfolio_bg_file = get_theme_file_uri('assets/images/portfolio/bg-graphic-design.jpg');
+}
+if ($cat_id === 7) {
+  $portfolio_bg_file = get_theme_file_uri('assets/images/portfolio/bg-others.jpg');
+}
 
 get_header();
 ?>
@@ -14,7 +31,7 @@ get_header();
   <!-- section title -->
 
   <div class="section-title ">
-    <div class="container-page  portflio-section-title bg-portflio-section padd-title">
+    <div class="container-page  portflio-section-title bg-portflio-section padd-title" style="background-image: url(<?php echo $portfolio_bg_file; ?>);">
       <div class="row-centered pd-tp-50">
         <div class="col-centered col-lg-7">
           <h2 class="title-h2"><?php the_title(); ?></h2>
