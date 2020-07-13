@@ -97,72 +97,42 @@ get_header();
             </p>
           </div>
         </div>
-        <div class=" col-lg-4  col-md-4">
-          <div class="project_product">
-            <div class="project-holder">
-              <img src="assets/images/portflio/3.jpg" class="img-responsive" alt="" title="">
-              <div class="text-holder">
-                <div class="text-holder-outer">
-                  <div class="text-holder-inner">
-                    <h4>Branding Project</h4>
-                    <div class="icon-holder">
-                      <a href="assets/images/portflio/branding-3.jpg" class="modal-venobox project-link">
-                        <i class=" icon_zoom-in_alt"></i>
-                      </a>
-                      <a href="single-portflio.html" class=" project-link">
-                        <i class="icon_link_alt"></i>
-                      </a>
+        <?php
+        $related_products_loop = new WP_Query(array(
+          'post_type' => 'client_work',
+          'order' => 'ASC',
+          'posts_per_page' => '3'
+        ));
+        while ($related_products_loop->have_posts()) : $related_products_loop->the_post(); ?>
+          <div class=" col-lg-4  col-md-4">
+            <div class="project_product">
+              <div class="project-holder">
+                <?php
+                if (has_post_thumbnail()) {
+                  the_post_thumbnail('full', ['class' => 'img-responsive']);
+                }
+                $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                ?>
+                <div class="text-holder">
+                  <div class="text-holder-outer">
+                    <div class="text-holder-inner">
+                      <h4><?php the_title(); ?></h4>
+                      <div class="icon-holder">
+                        <a href="<?php echo $featured_img_url; ?>" class="modal-venobox project-link">
+                          <i class=" icon_zoom-in_alt"></i>
+                        </a>
+                        <a href="<?php the_permalink(); ?>" class=" project-link">
+                          <i class="icon_link_alt"></i>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class=" col-lg-4  col-md-4">
-          <div class="project_product">
-            <div class="project-holder">
-              <img src="assets/images/portflio/2.jpg" class="img-responsive" alt="" title="">
-              <div class="text-holder">
-                <div class="text-holder-outer">
-                  <div class="text-holder-inner">
-                    <h4>Branding Project</h4>
-                    <div class="icon-holder">
-                      <a href="assets/images/portflio/branding-3.jpg" class="modal-venobox project-link">
-                        <i class=" icon_zoom-in_alt"></i>
-                      </a>
-                      <a href="single-portflio.html" class=" project-link">
-                        <i class="icon_link_alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class=" col-lg-4  col-md-4">
-          <div class="project_product">
-            <div class="project-holder">
-              <img src="assets/images/portflio/6.jpg" class="img-responsive" alt="" title="">
-              <div class="text-holder">
-                <div class="text-holder-outer">
-                  <div class="text-holder-inner">
-                    <h4>Branding Project</h4>
-                    <div class="icon-holder">
-                      <a href="assets/images/portflio/branding-3.jpg" class="modal-venobox project-link">
-                        <i class=" icon_zoom-in_alt"></i>
-                      </a>
-                      <a href="single-portflio.html" class=" project-link">
-                        <i class="icon_link_alt"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php endwhile;
+        wp_reset_query(); ?>
       </div>
     </div>
   </section>
