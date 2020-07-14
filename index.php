@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -14,44 +15,191 @@
 
 get_header();
 ?>
+<!-- section title -->
 
-	<main id="primary" class="site-main">
+<div class="section-title blog-section-title padd-title">
+  <div class="row-centered">
+    <div class="col-centered col-lg-7">
+      <h2 class="title-h2">Large Sidebar Right</h2>
 
-		<?php
-		if ( have_posts() ) :
+      <p>We can found some diffrent blog</p>
+    </div>
+  </div>
+</div>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+<!-- section title -->
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+<!--Blog Content -->
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+<section id="blog" class="padd-80">
+  <div class="container-page">
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+        <div class="blog-content">
+          <!--Blog post -->
 
-			endwhile;
+          <div class="blog-item">
+            <div class="blog-item-img">
+              <img src="assets/images/blog/blog4.jpg" alt="" />
+              <span class="date">Apr, 12, 2018</span>
+            </div>
 
-			the_posts_navigation();
+            <div class="blog-summary">
+              <h3>Trends in UX Design</h3>
 
-		else :
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et
+                accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus sit amet....
+                <a class="more-link" href="single-post.html">read more →</a>
+              </p>
 
-			get_template_part( 'template-parts/content', 'none' );
+              <div class="blog-meta">
+                <ul>
+                  <li>Apr, 12, 2018</li>
 
-		endif;
-		?>
+                  <li>minti</li>
 
-	</main><!-- #main -->
+                  <li>No comments</li>
+
+                  <li>Web design, Print</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!--Blog post -->
+
+          <div class="blog-item">
+            <div class="blog-item-img">
+              <img src="assets/images/blog/blog5.jpg" alt="" />
+              <span class="date">Apr, 12, 2018</span>
+            </div>
+
+            <div class="blog-summary">
+              <h3>Web development</h3>
+
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et
+                accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus sit amet....
+                <a class="more-link" href="single-post.html">read more →</a>
+              </p>
+
+              <div class="blog-meta">
+                <ul>
+                  <li>Apr, 12, 2018</li>
+
+                  <li>minti</li>
+
+                  <li>No comments</li>
+
+                  <li>Web design, Print</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!--Blog post -->
+
+          <div class="blog-item">
+            <div class="blog-item-img">
+              <img src="assets/images/blog/blog6.jpg" alt="" />
+              <span class="date">Apr, 12, 2018</span>
+            </div>
+
+            <div class="blog-summary">
+              <h3>Branding</h3>
+
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et
+                accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus sit amet....
+                <a class="more-link" href="single-post.html">read more →</a>
+              </p>
+
+              <div class="blog-meta">
+                <ul>
+                  <li>Apr, 12, 2018</li>
+
+                  <li>minti</li>
+
+                  <li>No comments</li>
+
+                  <li>Web design, Print</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="sidebar-side">
+          <!-- Search sidebar-->
+          <div class="sidebar-search">
+            <form class="search clearfix" method="get" action="#">
+              <input type="text" name="name-filed" placeholder="Search ou blog" />
+              <button type="submit"><i class="icon_search"></i></button>
+            </form>
+          </div>
+
+          <!-- Search sidebar-->
+
+          <div class="sidebar-categroies">
+            <!-- Sidebar categories-->
+            <h3>Categories</h3>
+
+            <ul class="catgeorie-list">
+              <li>
+                <a href="" class="clearfix"> <span>Web design</span> </a>
+              </li>
+
+              <li>
+                <a href="" class="clearfix">
+                  <span>Developpement</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="" class="clearfix"> <span>UX design</span> </a>
+              </li>
+
+              <li>
+                <a href="" class="clearfix"> <span>Others</span> </a>
+              </li>
+            </ul>
+            <!-- Sidebar categories-->
+          </div>
+
+          <div class="sidebar-tags">
+            <!-- Tags sidebar-->
+
+            <h3>Tags</h3>
+
+            <div class="tags-inner">
+              <a href="">Web Design</a>
+              <a href="">Inspiration</a>
+              <a href="">UX Design</a>
+              <a href="">Animation</a>
+              <a href="">Developpement</a>
+              <a href="">UI Design</a>
+              <a href="">Mobile</a>
+            </div>
+            <!-- Tags sidebar-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <?php
-get_sidebar();
+
 get_footer();
