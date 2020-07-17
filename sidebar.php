@@ -2,10 +2,7 @@
   <div class="sidebar-side">
     <!-- Search sidebar-->
     <div class="sidebar-search">
-      <form class="search clearfix" method="get" action="#">
-        <input type="text" name="name-filed" placeholder="Search ou blog" />
-        <button type="submit"><i class="icon_search"></i></button>
-      </form>
+      <?php echo get_search_form(); ?>
     </div>
 
     <!-- Search sidebar-->

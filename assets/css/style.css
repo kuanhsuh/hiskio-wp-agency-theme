@@ -1597,7 +1597,7 @@ Blog
 }
 
 .search {
-  background-color: #f7f7f7;
+  /* background-color: #f7f7f7; */
   border: none;
   border-radius: 10px;
   max-width: 100%;
