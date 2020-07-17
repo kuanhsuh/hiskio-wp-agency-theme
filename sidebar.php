@@ -15,23 +15,15 @@
       <h3>Categories</h3>
 
       <ul class="catgeorie-list">
-        <li>
-          <a href="" class="clearfix"> <span>Web design</span> </a>
-        </li>
+        <?php
+        $categories = get_categories('exclude=1,4,5,6,7');
+        foreach ($categories as $category) {
+        ?>
+          <li>
+            <a href="<?php echo get_category_link($category->term_id); ?>" class="clearfix"> <span><?php echo $category->name; ?></span> </a>
+          </li>
+        <?php } ?>
 
-        <li>
-          <a href="" class="clearfix">
-            <span>Developpement</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="" class="clearfix"> <span>UX design</span> </a>
-        </li>
-
-        <li>
-          <a href="" class="clearfix"> <span>Others</span> </a>
-        </li>
       </ul>
       <!-- Sidebar categories-->
     </div>
@@ -42,7 +34,13 @@
       <h3>Tags</h3>
 
       <div class="tags-inner">
-        <a href="">Web Design</a>
+        <?php
+        $tags = get_tags();
+        foreach ($tags as $tag) {
+        ?>
+          <a href="<?php echo get_term_link($tag); ?>"><?php echo $tag->name; ?></a>
+        <?php } ?>
+
         <a href="">Inspiration</a>
         <a href="">UX Design</a>
         <a href="">Animation</a>
