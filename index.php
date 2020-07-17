@@ -36,107 +36,45 @@ get_header();
     <div class="row">
       <div class="col-lg-8 col-md-8">
         <div class="blog-content">
-          <!--Blog post -->
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-          <div class="blog-item">
-            <div class="blog-item-img">
-              <img src="assets/images/blog/blog4.jpg" alt="" />
-              <span class="date">Apr, 12, 2018</span>
-            </div>
+              <!--Blog post -->
+              <div class="blog-item">
+                <div class="blog-item-img">
+                  <?php
+                  if (has_post_thumbnail()) {
+                    the_post_thumbnail('full');
+                  } ?>
+                  <img src="assets/images/blog/blog4.jpg" alt="" />
+                  <span class="date"><?php the_date(); ?></span>
+                </div>
 
-            <div class="blog-summary">
-              <h3>Trends in UX Design</h3>
+                <div class="blog-summary">
+                  <h3><?php the_title(); ?></h3>
 
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                magna aliquyam erat, sed diam voluptua. At vero eos et
-                accusam et justo duo dolores et ea rebum. Stet clita kasd
-                gubergren, no sea takimata sanctus sit amet....
-                <a class="more-link" href="single-post.html">read more →</a>
-              </p>
+                  <div>
+                    <?php the_excerpt(); ?>
+                    <a class="more-link" href="<?php the_permalink(); ?>">read more →</a>
+                  </div>
 
-              <div class="blog-meta">
-                <ul>
-                  <li>Apr, 12, 2018</li>
+                  <div class="blog-meta">
+                    <ul>
+                      <li><?php echo get_the_date(); ?></li>
 
-                  <li>minti</li>
+                      <li><?php the_author(); ?></li>
 
-                  <li>No comments</li>
+                      <li>No comments</li>
 
-                  <li>Web design, Print</li>
-                </ul>
+                      <li><?php the_category(); ?></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <!--Blog post -->
-
-          <div class="blog-item">
-            <div class="blog-item-img">
-              <img src="assets/images/blog/blog5.jpg" alt="" />
-              <span class="date">Apr, 12, 2018</span>
-            </div>
-
-            <div class="blog-summary">
-              <h3>Web development</h3>
-
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                magna aliquyam erat, sed diam voluptua. At vero eos et
-                accusam et justo duo dolores et ea rebum. Stet clita kasd
-                gubergren, no sea takimata sanctus sit amet....
-                <a class="more-link" href="single-post.html">read more →</a>
-              </p>
-
-              <div class="blog-meta">
-                <ul>
-                  <li>Apr, 12, 2018</li>
-
-                  <li>minti</li>
-
-                  <li>No comments</li>
-
-                  <li>Web design, Print</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!--Blog post -->
-
-          <div class="blog-item">
-            <div class="blog-item-img">
-              <img src="assets/images/blog/blog6.jpg" alt="" />
-              <span class="date">Apr, 12, 2018</span>
-            </div>
-
-            <div class="blog-summary">
-              <h3>Branding</h3>
-
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                magna aliquyam erat, sed diam voluptua. At vero eos et
-                accusam et justo duo dolores et ea rebum. Stet clita kasd
-                gubergren, no sea takimata sanctus sit amet....
-                <a class="more-link" href="single-post.html">read more →</a>
-              </p>
-
-              <div class="blog-meta">
-                <ul>
-                  <li>Apr, 12, 2018</li>
-
-                  <li>minti</li>
-
-                  <li>No comments</li>
-
-                  <li>Web design, Print</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+            <?php endwhile;
+          else : ?>
+            <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
+          <?php endif; ?>
         </div>
       </div>
 
