@@ -55,12 +55,12 @@ $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
           </div>
           <div class="author-info">
             <div class="author-image">
-              <a href=" "><img alt="" src="assets/images/team/team1.jpg" class="avatar-photo"></a>
+
+              <?php echo get_avatar(get_the_author_meta('ID'), 32, '', '', array('class' => 'avatar-photo')); ?>
             </div>
             <div class="author-bio">
-              <h4>About The Author</h4>
-              <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                aliquip ex ea commodo consequat.
+              <h4>About The Author <?php echo get_the_author_meta("display_name"); ?></h4>
+              <p><?php echo get_the_author_meta("description"); ?>
               </p>
             </div>
           </div>
