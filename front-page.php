@@ -498,75 +498,48 @@ $team_two_img = get_field('team_two_img', 10);
           </p>
         </div>
       </div>
-      <div class="col-lg-4  col-md-4">
-        <div class="blog-inner">
-          <div class="blog-image">
-            <img src="<?php echo get_theme_file_uri('assets/images/blog/blog1.jpg'); ?>" alt="">
-            <div class="blog-date">
-              <strong>15</strong>
-              <span>APR</span>
+      <?php
+      $args = array(
+        'cat' => "-1,-4,-5,-6,-7",
+        'posts_per_page' => 3
+      );
+
+      $blog_query = new WP_Query($args);
+
+      while ($blog_query->have_posts()) : $blog_query->the_post();
+      ?>
+        <div class="col-lg-4  col-md-4">
+          <div class="blog-inner">
+            <div class="blog-image">
+              <?php if (has_post_thumbnail()) {
+                the_post_thumbnail('medium');
+              } ?>
+              <div class="blog-date">
+                <strong><?php echo get_the_date('j'); ?></strong>
+                <span><?php echo get_the_date('F'); ?></span>
+              </div>
             </div>
-          </div>
-          <div class="blog-inner-content">
-            <h3><a href="single-post.html">Excepteur sint occaecat cupidatat non proident</a></h3>
-            <div class="comment-blog">
-              <ul>
-                <li><a href=""><i class="icon_ribbon_alt"></i>Strategy</a></li>
-                <li><a href=""><i class=" icon_comment_alt"></i> 5 Comments</a></li>
-              </ul>
+            <div class="blog-inner-content">
+              <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+              <div class="comment-blog">
+                <ul>
+                  <?php
+                  foreach (get_the_category() as $category) {
+                    echo '<li><a href="' . get_category_link($category->term_id) . '"><i class="icon_ribbon_alt"></i>' . $category->name . '</a></li>';
+                  }
+                  ?>
+
+                  <li><a href=""><i class=" icon_comment_alt"></i> 5 Comments</a></li>
+                </ul>
+              </div>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque audantium,
+                totam rem aperiam,
+              </p>
             </div>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque audantium,
-              totam rem aperiam,
-            </p>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4  col-md-4">
-        <div class="blog-inner">
-          <div class="blog-image">
-            <img src="<?php echo get_theme_file_uri('assets/images/blog/blog2.jpg'); ?>" alt="">
-            <div class="blog-date">
-              <strong>15</strong>
-              <span>APR</span>
-            </div>
-          </div>
-          <div class="blog-inner-content">
-            <h3><a href="single-post.html">Excepteur sint occaecat cupidatat non proident</a></h3>
-            <div class="comment-blog">
-              <ul>
-                <li><a href=""><i class="icon_ribbon_alt"></i>Strategy</a></li>
-                <li><a href=""><i class=" icon_comment_alt"></i> 5 Comments</a></li>
-              </ul>
-            </div>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque audantium,
-              totam rem aperiam,
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4  col-md-4">
-        <div class="blog-inner">
-          <div class="blog-image">
-            <img src="<?php echo get_theme_file_uri('assets/images/blog/blog3.jpg'); ?>" alt="">
-            <div class="blog-date">
-              <strong>15</strong>
-              <span>APR</span>
-            </div>
-          </div>
-          <div class="blog-inner-content">
-            <h3><a href="single-post.html">Excepteur sint occaecat cupidatat non proident</a></h3>
-            <div class="comment-blog">
-              <ul>
-                <li><a href=""><i class="icon_ribbon_alt"></i>Strategy</a></li>
-                <li><a href=""><i class=" icon_comment_alt"></i> 5 Comments</a></li>
-              </ul>
-            </div>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque audantium,
-              totam rem aperiam,
-            </p>
-          </div>
-        </div>
-      </div>
+      <?php endwhile;
+      wp_reset_query(); ?>
     </div>
   </div>
 </section>
