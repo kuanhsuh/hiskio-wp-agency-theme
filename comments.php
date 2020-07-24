@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying comments
  *
@@ -15,63 +16,25 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
-	return;
+if (post_password_required()) {
+  return;
 }
 ?>
 
+<?php if (post_password_required()) {
+  return;
+} ?>
 <div id="comments" class="comments-area">
-
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$hiskio_agency_comment_count = get_comments_number();
-			if ( '1' === $hiskio_agency_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'hiskio-agency' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $hiskio_agency_comment_count, 'comments title', 'hiskio-agency' ) ),
-					number_format_i18n( $hiskio_agency_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
-
-		<?php the_comments_navigation(); ?>
-
-		<ol class="comment-list">
-			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
-			?>
-		</ol><!-- .comment-list -->
-
-		<?php
-		the_comments_navigation();
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'hiskio-agency' ); ?></p>
-			<?php
-		endif;
-
-	endif; // Check for have_comments().
-
-	comment_form();
-	?>
-
-</div><!-- #comments -->
+  <?php if (have_comments()) { ?>
+    <h4 class="comments-title"><?php comments_number(__('No Comments', 'your-text-domain'), __('1 Comment', 'your-text-domain'), '% ' . __('Comments', 'your-text-domain')); ?></h4>
+    <span class="title-line"></span>
+    <ol class="comment-list">
+      <?php wp_list_comments(array('avatar_size' => 70, 'style' => 'ul', 'callback' => 'hiskio_agency_comments', 'type' => 'all')); ?>
+    </ol>
+    <?php the_comments_pagination(array('prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i> <span class="screen-reader-text">' . __('Previous', 'your-text-domain') . '</span>', 'next_text' => '<span class="screen-reader-text">' . __('Next', 'your-text-domain') . '</span> <i class="fa fa-angle-right" aria-hidden="true"></i>',)); ?>
+  <?php } ?>
+  <?php if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')) { ?>
+    <p class="no-comments"><?php _e('Comments are closed.', 'your-text-domain'); ?></p>
+  <?php } ?>
+  <?php comment_form(); ?>
+</div>

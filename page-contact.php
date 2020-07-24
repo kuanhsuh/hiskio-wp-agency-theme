@@ -30,22 +30,7 @@ get_header();
         </div>
         <div class="col-centered col-lg-6">
           <div class="content-map">
-            <form action="#" method="get">
-              <div class="row form-group">
-                <div class="col-lg-6">
-                  <input type="text" name="field-name" class="form-control" placeholder="Name">
-                </div>
-                <div class="col-lg-6">
-                  <input type="email" name="field-name" class="form-control" placeholder="Email">
-                </div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" rows="4" cols="3" placeholder="Your message "></textarea>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-red">Send your message </button>
-              </div>
-            </form>
+            <?php echo do_shortcode('[contact-form-7 id="155" title="Contact Form"]'); ?>
             <div class="btn-map"><i class=" icon_pin_alt"></i></div>
           </div>
         </div>

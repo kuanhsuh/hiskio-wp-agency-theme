@@ -64,72 +64,21 @@ $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
               </p>
             </div>
           </div>
-          <div class="commnent-blog">
-            <h3>3 Comments</h3>
-            <div class="comment-blog-inner">
-              <div class="avatar-blog">
-                <img src="assets/images/team/team3.jpg" alt="">
-              </div>
-              <div class="comment-blog-text">
-                <span>John Marconi</span>
-                <small>August 7, 2018</small>
-                <p>
-                  Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-                  consequatur aut perferendis doloribus asperiores repellat.
-                </p>
-              </div>
-            </div>
-            <div class="comment-blog-inner">
-              <div class="avatar-blog">
-                <img src="assets/images/team/team4.jpg" alt="">
-              </div>
-              <div class="comment-blog-text">
-                <span>John Marconi</span>
-                <small>August 7, 2018</small>
-                <p>
-                  Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-                  consequatur aut perferendis doloribus asperiores repellat.
-                </p>
-              </div>
-            </div>
-            <div class="comment-blog-inner">
-              <div class="avatar-blog">
-                <img src="assets/images/team/team2.jpg" alt="">
-              </div>
-              <div class="comment-blog-text">
-                <span>John Marconi</span>
-                <small>August 7, 2018</small>
-                <p>
-                  Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-                  consequatur aut perferendis doloribus asperiores repellat.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="comments-reply">
-            <h3>Leave a reply</h3>
-            <form class="form-comment">
-              <div class="row form-group">
-                <div class="col-lg-6">
-                  <input type="text" name="name-field" class="form-control" placeholder="Your name">
-                </div>
-                <div class="col-lg-6">
-                  <input type="email" name="name-field" class="form-control" placeholder="Your E-mail">
-                </div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" rows="5" cols="3" placeholder="Your message"></textarea>
-              </div>
-              <div class="from-group">
-                <a href="#" class="btn btn-red  "> Comment </a>
-              </div>
-            </form>
-          </div>
+
+
+          <?php
+          // If comments are open or we have at least one comment, load up the comment template.
+          if (comments_open() || get_comments_number()) :
+            comments_template();
+          endif;
+          ?>
         </div>
 
         <?php get_sidebar(); ?>
       </div>
     </div>
+
+
   </div>
 
 <?php endwhile; ?>

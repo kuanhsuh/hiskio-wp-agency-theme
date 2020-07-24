@@ -529,7 +529,7 @@ $team_two_img = get_field('team_two_img', 10);
                   }
                   ?>
 
-                  <li><a href=""><i class=" icon_comment_alt"></i> 5 Comments</a></li>
+                  <li><i class=" icon_comment_alt"></i> <?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>.</li>
                 </ul>
               </div>
               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque audantium,
