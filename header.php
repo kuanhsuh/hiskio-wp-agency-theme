@@ -106,13 +106,28 @@
                 <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
                   <li class="panel-outer">
                     <div class="form-container">
-                      <form method="get" action="#">
-                        <div class="form-group">
-                          <input type="search" name="field-name" value="" placeholder="Search Here" required="">
-                          <button type="submit" class="search-btn"><span class=" icon_search"></span></button>
-                        </div>
-                      </form>
-                    </div>
+                      <div class="form-group">
+                        <input id="searchInput" type="text" value="" placeholder="Search Here" onkeyup="typingLogic(this)">
+                      </div>
+
+                      <div id="search-result">
+                        <div>
+                          <h4 class="mt-3">文章</h4>
+                          <ul class="search-result-post">
+
+
+                          </ul>
+                        </div> <!-- search-result-post -->
+
+                        <hr>
+                        <div>
+                          <h4>作品</h4>
+                          <ul class="search-result-work">
+
+                          </ul>
+                        </div> <!-- search-result-work -->
+                      </div><!-- search-result -->
+                    </div> <!-- form container-->
                   </li>
                 </ul>
               </div>

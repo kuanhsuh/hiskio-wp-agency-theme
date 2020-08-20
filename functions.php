@@ -253,7 +253,17 @@ function hiskio_agency_public_styles()
   wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.7.0', 'all');
 }
 
+add_action('rest_api_init', function () {
+  register_rest_field(['post', 'client_work'], 'featured_image_src', array(
+    'get_callback' => function ($post_arr) {
+      $image_src_arr = wp_get_attachment_image_src($post_arr['featured_media'], 'thumbnail');
 
+      return $image_src_arr[0];
+    },
+    'update_callback' => null,
+    'schema' => null
+  ));
+});
 
 /**
  * Implement the Custom Header feature.

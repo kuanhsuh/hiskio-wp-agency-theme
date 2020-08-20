@@ -147,6 +147,96 @@
 
 <?php } ?>
 
+<script>
+  var previousValue;
+  var typingTimer;
+
+  function typingLogic(a) {
+    if (a.value != previousValue) {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(function() {
+        searchQuery(a.value)
+      }, 800)
+    }
+
+
+    previousValue = a.value;
+  }
+
+  function searchQuery(searchValue) {
+    if (!searchValue) {
+      document.querySelector(".search-result-post").innerHTML = " "
+      document.querySelector(".search-result-work").innerHTML = " "
+      return
+    }
+
+    var urls = [`http://localhost:8888/hiskio-agency/wp-json/wp/v2/posts?search=${searchValue}&per_page=3`, `http://localhost:8888/hiskio-agency/wp-json/wp/v2/client_work?search=${searchValue}&per_page=3`]
+
+    Promise.all(urls.map(u => fetch(u))).then(responses =>
+      Promise.all(responses.map(res => res.json()))
+    ).then(data => {
+      displayPostResults(data[0])
+      displayWorkResults(data[1])
+    })
+  }
+
+  function displayPostResults(data) {
+    if (data.length === 0) {
+      var postResults =
+        `
+      <li class="my-2 d-flex">
+        找不到相關文章
+      </li>
+      `
+      document.querySelector(".search-result-post").innerHTML = postResults;
+    } else {
+      var postResults = data.map(post =>
+        `
+      <li class="my-2 d-flex">
+        <a href="${post.link}" class="d-flex align-items-center">
+          <div class="search-icon">
+            <img src="${post.featured_image_src}" alt="" class="mw-none h-100">
+          </div>
+          <div class="ml-1 mb-0 font-light">${post.title.rendered}</div>
+        </a>
+      </li> <!-- search-result-item-->
+      `
+      )
+
+      document.querySelector(".search-result-post").innerHTML = postResults.join(" ");
+
+    }
+  }
+
+  function displayWorkResults(data) {
+    if (data.length === 0) {
+      var workResults =
+        `
+      <li class="my-2 d-flex">
+        找不到相關文章
+      </li>
+      `
+      document.querySelector(".search-result-work").innerHTML = workResults;
+    } else {
+      var workResults = data.map(post =>
+        `
+      <li class="my-2 d-flex">
+        <a href="${post.link}" class="d-flex align-items-center">
+          <div class="search-icon">
+            <img src="${post.featured_image_src}" alt="" class="mw-none h-100">
+          </div>
+          <div class="ml-1 mb-0 font-light">${post.title.rendered}</div>
+        </a>
+      </li> <!-- search-result-item-->
+      `
+      )
+
+      document.querySelector(".search-result-work").innerHTML = workResults.join(" ");
+
+    }
+  }
+</script>
+
 </body>
 
 </html>

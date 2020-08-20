@@ -189,9 +189,9 @@
     padding-right: 65px;
   }
 
-  .right-nav ul li:first-child {
+  /* .right-nav ul li:first-child {
     display: none;
-  }
+  } */
 
   .panel .menu-btn {
     margin-right: 80px;
