@@ -60,28 +60,16 @@
       </a>
       <ul>
         <li class="nav-item active">
-          <a data-scroll="" class="nav-link section-scroll" href="#home">Home</a>
+          <a class="nav-link section-scroll" href="<?php echo get_page_link(10); ?>">Home</a>
         </li>
         <li class="nav-item">
-          <a data-scroll="" class="nav-link section-scroll" href="#about">About</a>
+          <a class="nav-link section-scroll" href="<?php echo get_page_link(5); ?>">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a data-scroll="" class="nav-link section-scroll" href="#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a data-scroll="" class="nav-link section-scroll" href="#portfolio">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a data-scroll="" class="nav-link section-scroll" href="#team">Team</a>
-        </li>
-        <li class="nav-item">
-          <a data-scroll="" class="nav-link section-scroll" href="#blog">Blog</a>
+          <a class="nav-link section-scroll" href="<?php echo esc_html(site_url("/blog")); ?>">Blog</a>
         </li>
         <li>
-          <a data-scroll="" href="#testimonials" class="nav-link section-scroll">Testimonials</a>
-        </li>
-        <li>
-          <a data-scroll="" href="#contact" class="nav-link section-scroll">Contact</a>
+          <a href="<?php echo esc_html(site_url("/contact")); ?>" class="nav-link section-scroll">Contact</a>
         </li>
         <li class="menu-contact mg-tp-40"><a target="_blank" href="#">Facebook<i class="social_facebook"></i></a></li>
         <li class="menu-contact"><a target="_blank" href="#">Twitter<i class="social_twitter"></i></a></li>
