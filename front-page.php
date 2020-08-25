@@ -12,25 +12,8 @@ $video_img = get_field('video_background_img', 10);
 $team_one_img = get_field('team_one_img', 10);
 $team_two_img = get_field('team_two_img', 10);
 ?>
-<!--Begin Hero Section-->
-<section id="home" class="pd-tp-80">
-  <div class="container-page  hero">
-    <div class="col-md-12 col-xs-12 col-sm-12">
-      <div class="hero-text">
-        <h2>
-          <?php the_field('heading_title', 10); ?></h2>
-        <div id="typed-strings">
-          <b>Landing Pages</b>
-          <b>Logo Design</b>
-          <b>Illustrations</b>
-          <b>eCommerce</b>
-        </div>
-        <span id="typed"></span>
-        <p><?php the_field('heading_subtitle', 10); ?></p> <a href="" class="btn btn-red">About us</a>
-      </div>
-    </div>
-  </div>
-</section>
+
+<?php get_template_part('template-parts/content', 'home-heading'); ?>
 
 <section id="about-p" class="pd-tp-80 pd-bt-40">
   <div class="container-page">
