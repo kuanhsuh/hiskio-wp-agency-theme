@@ -91,7 +91,7 @@ $team_two_img = get_field('team_two_img', 10);
             <div class="col-md-6 col-lg-6">
               <div class="icon-block ">
                 <img src="<?php echo get_theme_file_uri('assets/images/bag.svg'); ?>" alt="">
-                <h3>BRANDING</h3>
+                <h3>BRANDING-test</h3>
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium
                 </p>
               </div>
